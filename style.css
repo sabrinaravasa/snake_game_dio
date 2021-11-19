@@ -1,3 +1,9 @@
 body{
-    
+    height: 95vh;
+    width: 95;
+    display: flex; /*flexbox*/
+    justify-content: center; /*alinha horizontalmente no centro*/
+    align-items: center; /*alinha verticalmente no centro*/
+    flex-direction: column; /*deixa em coluna um item abaixo do outro*/
+    color: rgb(22, 110, 22);
 }
