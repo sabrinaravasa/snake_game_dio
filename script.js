@@ -7,6 +7,10 @@ snake[0] = {
     y: 8 * box
 }
 let direction = "right"; //variável com a direção que a gente quer que a cobrinha ande//
+let food = {
+    x: Math.floor(Math.random() * 15 + 1) * box,//criação de números aleatórios, math.random retorna sempre um número ateatório até um//
+    y: Math.floor(Math.random() * 15 + 1) * box
+}
 
 function criarBG() {
     context.fillStyle = "lightgreen";
@@ -19,6 +23,11 @@ function criarCobrinha() {
         context.fillStyle = "green";
         context.fillRect(snake[i].x, snake[i].y, box, box);
     }
+}
+
+function drawFood() {
+    context.fillStyle = "red";
+    context.fillRect(food.x, food.y, box, box);
 }
 
 //captar o toque no botão e transmitir o código da tecla para a função. Keydown é um evento de clique e vai chamar a update//
@@ -41,6 +50,7 @@ function iniciarJogo(){
 
     criarBG();
     criarCobrinha();
+    drawFood();
 
     //coordenadas por onde a cobrinha vai seguir//
     let snakeX = snake[0].x;
